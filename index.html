@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Leaves and a Bud | Premium Organic Whole Leaf Tea</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Shop premium organic whole leaf tea from Two Leaves and a Bud. Discover our signature plant-based, compostable pyramid sachets and explore our brewing guides.">
+  <meta name="keywords" content="organic tea, whole leaf tea, pyramid tea sachets, green tea, black tea, herbal tea, two leaves and a bud">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css?v=7">
+  
+  <!-- FontAwesome for Premium UI Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+
+  <!-- ==========================================
+     ANNOUNCEMENT BAR
+     ========================================== -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announcement-text">
+        <span>FREE US SHIPPING FOR ORDERS OVER $75</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     HEADER / NAVIGATION
+     ========================================== -->
+  <header id="main-header">
+    <div class="container-wide">
+      <div class="header-nav-card">
+        <!-- Burger menu (Mobile) -->
+        <button class="burger-menu" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Left Links (Desktop) -->
+        <nav class="nav-menu nav-menu-left">
+          <a href="#shop" class="nav-link nav-link-serif">Shop <span class="nav-arrow"><i class="fa-solid fa-chevron-down"></i></span></a>
+          <a href="#story" class="nav-link nav-link-serif">Learn <span class="nav-arrow"><i class="fa-solid fa-chevron-down"></i></span></a>
+          <a href="#brewing" class="nav-link nav-link-serif">Reviews <span class="nav-star"><i class="fa-solid fa-star"></i></span></a>
+        </nav>
+
+        <!-- Center Logo -->
+        <a href="#" class="header-logo">
+          <img src="Twoleaves_logo.svg" alt="Two Leaves and a Bud Logo">
+        </a>
+
+        <!-- Right Links (Desktop) + Cart (Desktop/Mobile) -->
+        <div class="nav-right-container">
+          <nav class="nav-menu nav-menu-right">
+            <a href="#wholesale" class="nav-link nav-link-sans">My Account</a>
+            <a href="#wholesale" class="nav-link nav-link-sans">Cafe & Wholesale Partners</a>
+            <a href="#brewing" class="nav-link nav-link-sans">Tea Journal</a>
+          </nav>
+          
+          <button class="cart-icon-btn" id="cart-open-btn" aria-label="Open Shopping Cart">
+            <i class="ri-shopping-bag-line"></i>
+            <span class="cart-badge-new" id="cart-badge-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Navigation -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <nav style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <a href="#shop" class="nav-link" onclick="toggleMobileMenu()">Shop Teas</a>
+      <a href="#story" class="nav-link" onclick="toggleMobileMenu()">Our Story</a>
+      <a href="#brewing" class="nav-link" onclick="toggleMobileMenu()">Brewing Guides</a>
+      <a href="#wholesale" class="nav-link" onclick="toggleMobileMenu()">Wholesale Portal</a>
+    </nav>
+  </div>
+
+  <!-- ==========================================
+     HERO SECTION
+     ========================================== -->
+  <section class="hero">
+    <!-- Left Slider Arrow Button -->
+    <!-- <button class="hero-slider-prev-btn" aria-label="Previous Slide">
+      <i class="fa-solid fa-chevron-left"></i> -->
+    <!-- </button> -->
+
+    <div class="container-wide hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-title text-serif">A cup that fits the moment.</h1>
+        <p class="hero-desc">From compostable whole leaf tea sachets and iced tea to tea lattes and matcha, we’ve got something for everyone.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn btn-primary">Shop Now</a>
+        </div>
+      </div>
+      <!-- Spacer column to let the background image products on the right shine through -->
+      <div class="hero-image-spacer"></div>
+    </div>
+    
+    <!-- Accessibility Button -->
+    <button class="hero-accessibility-btn" aria-label="Accessibility settings" onclick="alert('Accessibility settings menu opened!')">
+      <i class="fa-solid fa-person"></i>
+    </button>
+
+    <!-- Scroll Down Icon -->
+    <a href="#shop" class="scroll-down-btn" aria-label="Scroll down to products">
+      <img src="Frame_727.svg" alt="Scroll down">
+    </a>
+  </section>
+
+  <!-- ==========================================
+     INTERACTIVE TEA CATALOG
+     ========================================== -->
+  <section id="shop" class="tea-catalog section-padding">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title text-serif">Shop Our Organic Blends</h2>
+        <p class="section-subtitle">Discover our curated collection of loose leaf quality tea, packaged in eco-friendly sachets for convenience and premium taste.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Blends</button>
+        <button class="filter-btn" data-filter="black">Black Tea</button>
+        <button class="filter-btn" data-filter="green">Green Tea</button>
+        <button class="filter-btn" data-filter="herbal">Herbal Infusion</button>
+      </div>
+
+      <!-- Catalog Grid -->
+      <div class="product-grid" id="product-grid">
+        <!-- Product 1: Alpine Berry -->
+        <div class="product-card" data-category="herbal">
+          <span class="product-tag">Top Rated</span>
+          <div class="product-img-wrapper">
+            <img src="AlpineBerry.webp" alt="Alpine Berry Herbal Tea" class="product-img">
+          </div>
+          <span class="product-category">Herbal Infusion</span>
+          <h3 class="product-title text-serif">Organic Alpine Berry</h3>
+          <div class="product-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(320 reviews)</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$13.00</span>
+            <button class="add-to-cart-btn" data-id="1" data-title="Organic Alpine Berry" data-price="13.00" data-img="AlpineBerry.webp">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2: Tropical Green -->
+        <div class="product-card" data-category="green">
+          <span class="product-tag">Refreshing</span>
+          <div class="product-img-wrapper">
+            <img src="tropical_green_tea.png" alt="Organic Tropical Green Tea" class="product-img">
+          </div>
+          <span class="product-category">Green Tea</span>
+          <h3 class="product-title text-serif">Organic Tropical Green</h3>
+          <div class="product-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>(98 reviews)</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$12.50</span>
+            <button class="add-to-cart-btn" data-id="2" data-title="Organic Tropical Green" data-price="12.50" data-img="tropical_green_tea.png">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3: Assam Black -->
+        <div class="product-card" data-category="black">
+          <span class="product-tag">Best Seller</span>
+          <div class="product-img-wrapper">
+            <img src="assam_black_tea.png" alt="Organic Assam Black Tea" class="product-img">
+          </div>
+          <span class="product-category">Black Tea</span>
+          <h3 class="product-title text-serif">Organic Assam Black</h3>
+          <div class="product-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(142 reviews)</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$12.00</span>
+            <button class="add-to-cart-btn" data-id="3" data-title="Organic Assam Black" data-price="12.00" data-img="assam_black_tea.png">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4: Peppermint -->
+        <div class="product-card" data-category="herbal">
+          <span class="product-tag">Caffeine Free</span>
+          <div class="product-img-wrapper">
+            <img src="peppermint_herbal_tea.png" alt="Organic Peppermint Tea" class="product-img">
+          </div>
+          <span class="product-category">Herbal Infusion</span>
+          <h3 class="product-title text-serif">Organic Peppermint</h3>
+          <div class="product-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(210 reviews)</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$11.50</span>
+            <button class="add-to-cart-btn" data-id="4" data-title="Organic Peppermint" data-price="11.50" data-img="peppermint_herbal_tea.png">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 5: Chamomile -->
+        <div class="product-card" data-category="herbal">
+          <span class="product-tag">Calming</span>
+          <div class="product-img-wrapper">
+            <img src="chamomile_tea.png" alt="Organic Chamomile Tea" class="product-img">
+          </div>
+          <span class="product-category">Herbal Infusion</span>
+          <h3 class="product-title text-serif">Organic Chamomile</h3>
+          <div class="product-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>(185 reviews)</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$11.50</span>
+            <button class="add-to-cart-btn" data-id="5" data-title="Organic Chamomile" data-price="11.50" data-img="chamomile_tea.png">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 6: Mountain High Chai -->
+        <div class="product-card" data-category="black">
+          <span class="product-tag">Spicy & Bold</span>
+          <div class="product-img-wrapper">
+            <img src="assam_black_tea.png" alt="Organic Mountain High Chai Tea" class="product-img" style="filter: hue-rotate(45deg);">
+          </div>
+          <span class="product-category">Black Tea</span>
+          <h3 class="product-title text-serif">Mountain High Chai</h3>
+          <div class="product-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(112 reviews)</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$12.50</span>
+            <button class="add-to-cart-btn" data-id="6" data-title="Mountain High Chai" data-price="12.50" data-img="assam_black_tea.png">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+     BRAND PHILOSOPHY SECTION
+     ========================================== -->
+  <section id="story" class="philosophy section-padding">
+    <div class="container philosophy-grid">
+      <div class="philosophy-text">
+        <h2 class="text-serif">The "Two Leaves and a Bud" Standard</h2>
+        <p>In the premium tea industry, "two leaves and a bud" represents the traditional standard for quality pluck. We harvest only the top two youngest leaves and the tender unopened bud of the tea plant (Camellia sinensis) to yield tea that is sweetest, least bitter, and full of complex aromatics.</p>
+        <p>By using full, whole tea leaves instead of broken bits and tea dust, we preserve the essential flavor oils. Our pyramid-shaped sachets are fully compostable, plant-based, and specifically engineered to give the leaves room to unfurl and steep cleanly.</p>
+        
+        <div class="philosophy-points">
+          <div class="point-card">
+            <i class="fa-solid fa-circle-check point-icon"></i>
+            <h4 class="point-title">Whole Leaf Only</h4>
+            <p class="point-desc">No dust or fannings. You get full, premium tea leaves in every sachet.</p>
+          </div>
+          <div class="point-card">
+            <i class="fa-solid fa-recycle point-icon"></i>
+            <h4 class="point-title">Compostable Sachets</h4>
+            <p class="point-desc">Made from plant-based renewable resources, fully biodegradable.</p>
+          </div>
+          <div class="point-card">
+            <i class="fa-solid fa-award point-icon"></i>
+            <h4 class="point-title">100% Organic</h4>
+            <p class="point-desc">Certified organic farming. No artificial flavorings, chemicals, or pesticides.</p>
+          </div>
+          <div class="point-card">
+            <i class="fa-solid fa-handshake point-icon"></i>
+            <h4 class="point-title">Fair Sourcing</h4>
+            <p class="point-desc">We work directly with growers to ensure fair trade and community support.</p>
+          </div>
+        </div>
+      </div>
+      <div class="philosophy-image-container">
+        <!-- Using high-quality Unsplash image for premium editorial look -->
+        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800" alt="Fresh Tea Plucking" class="philosophy-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+     INTERACTIVE BREWING GUIDE SECTION
+     ========================================== -->
+  <section id="brewing" class="brewing-guide section-padding">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title text-serif">The Art of Brewing</h2>
+        <p class="section-subtitle">Unlock the perfect aroma and flavor of each blend. Use our interactive guide to view brewing stats and start your steeping timer.</p>
+      </div>
+
+      <!-- Brewing Tea Selector Tabs -->
+      <div class="brewing-tabs">
+        <button class="brew-tab-btn active" data-tea="black">
+          <i class="fa-solid fa-mug-hot"></i>
+          <span>Black Tea</span>
+        </button>
+        <button class="brew-tab-btn" data-tea="green">
+          <i class="fa-solid fa-leaf"></i>
+          <span>Green Tea</span>
+        </button>
+        <button class="brew-tab-btn" data-tea="herbal">
+          <i class="fa-solid fa-seedling"></i>
+          <span>Herbal Infusions</span>
+        </button>
+        <button class="brew-tab-btn" data-tea="chai">
+          <i class="fa-solid fa-pepper-hot"></i>
+          <span>Chai Blends</span>
+        </button>
+      </div>
+
+      <!-- Brewing Details Display Card -->
+      <div class="brewing-display">
+        <div class="brew-info-content" id="brew-info-content">
+          <!-- Populated by JavaScript, Default is Black Tea -->
+          <h3 class="brew-type-title text-serif">Assam Black Tea</h3>
+          <span class="brew-type-origin">Sourced from Assam, India</span>
+          <p class="brew-type-desc">Rich, malty, and full-bodied. Black tea leaves are fully oxidized and require boiling water to fully release their complex tannins and dark honeyed notes.</p>
+          
+          <div class="brew-stats-grid">
+            <div class="brew-stat">
+              <span class="brew-stat-label">Water Temp</span>
+              <span class="brew-stat-value" id="brew-temp">208°F / 98°C</span>
+            </div>
+            <div class="brew-stat">
+              <span class="brew-stat-label">Steep Time</span>
+              <span class="brew-stat-value" id="brew-time">4 Minutes</span>
+            </div>
+            <div class="brew-stat">
+              <span class="brew-stat-label">Water Vol</span>
+              <span class="brew-stat-value">8 oz / 240ml</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Steeping Timer -->
+        <div class="brew-timer-wrapper">
+          <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 1rem;">Steeping Timer</h4>
+          <div class="timer-circle-container">
+            <svg class="timer-svg" viewBox="0 0 170 170">
+              <circle class="timer-bg-circle" cx="85" cy="85" r="75"></circle>
+              <circle class="timer-progress-circle" id="timer-progress" cx="85" cy="85" r="75"></circle>
+            </svg>
+            <div class="timer-time-display" id="timer-display">04:00</div>
+          </div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn-start" id="timer-start-btn">Start Steep</button>
+            <button class="timer-btn timer-btn-reset" id="timer-reset-btn">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+     TESTIMONIALS SECTION
+     ========================================== -->
+  <section class="testimonials section-padding">
+    <div class="container">
+      <div class="testimonial-slider">
+        <div class="testimonial-track" id="testimonial-track">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote text-serif">"The organic Alpine Berry has become a nightly ritual. The flavor is incredibly rich, and knowing the sachets are fully plant-based and compostable makes it even better!"</p>
+            <h5 class="testimonial-author">Sarah Jenkins</h5>
+            <span class="testimonial-role">Verified Customer, Boulder CO</span>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote text-serif">"I run a boutique cafe and switching to Two Leaves and a Bud for our tea menu was the best decision. Our customers love the pyramid sachet aesthetic and taste."</p>
+            <h5 class="testimonial-author">David Miller</h5>
+            <span class="testimonial-role">Cafe Owner, Portland OR</span>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote text-serif">"You can literally see the quality. Real, whole leaves, whole chamomile blossoms, and actual fruit chunks. The tea bags expand perfectly in the cup."</p>
+            <h5 class="testimonial-author">Jessica Chen</h5>
+            <span class="testimonial-role">Tea Enthusiast, San Francisco CA</span>
+          </div>
+        </div>
+
+        <!-- Slider Navigation Arrows -->
+        <div class="slider-controls">
+          <button class="slider-arrow" id="slider-prev-btn" aria-label="Previous Review">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="slider-arrow" id="slider-next-btn" aria-label="Next Review">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+     WHOLESALE CALLOUT SECTION
+     ========================================== -->
+  <section id="wholesale" class="wholesale section-padding">
+    <div class="container wholesale-grid">
+      <div class="wholesale-content">
+        <h2 class="text-serif">Wholesale Tea Solutions</h2>
+        <p>Deliver the highest quality whole leaf tea experience to your customers. We partner with cafes, premium restaurants, independent grocery stores, luxury hotels, and offices across the country to provide exceptional products, tea brewing hardware, and barista training.</p>
+        
+        <div class="wholesale-benefits">
+          <div class="benefit-item">
+            <i class="fa-solid fa-check benefit-icon"></i>
+            <span>Low order minimums & fast shipping direct from Colorado</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-check benefit-icon"></i>
+            <span>Specialty bulk packaging and individually wrapped premium sachets</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-check benefit-icon"></i>
+            <span>Complimentary custom menu designs & retail display racks</span>
+          </div>
+        </div>
+
+        <a href="mailto:wholesale@twoleavestea.com?subject=Wholesale Inquiry" class="btn btn-accent">Request Wholesale Pricing</a>
+      </div>
+      
+      <div class="wholesale-badge">
+        <div class="wholesale-badge-icon">
+          <i class="fa-solid fa-shop"></i>
+        </div>
+        <h3 class="wholesale-badge-title text-serif">Partner with Us</h3>
+        <p style="color: #A3B19B; font-size: 0.9rem; margin-bottom: 2rem;">Apply for a commercial wholesale account today and get access to exclusive bulk pricing, merchandising assets, and tea menus.</p>
+        <button class="btn btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--text-light);" onclick="alert('Wholesale commercial portal demo: Application form opened in mock state!')">Partner Portal Log In</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+     CART SLIDER DRAWER
+     ========================================== -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart-btn" id="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="cart-items-container" id="cart-items-list">
+      <!-- Populated dynamically by JavaScript -->
+      <div class="cart-empty-message">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p>Your shopping cart is currently empty.</p>
+        <a href="#shop" class="btn btn-primary" onclick="toggleCartDrawer()">Shop Our Teas</a>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">$0.00</span>
+      </div>
+      <p style="font-size: 0.75rem; color: var(--text-secondary); text-align: center;">Taxes and shipping calculated at checkout</p>
+      <button class="btn btn-primary checkout-btn" onclick="alert('Checkout process initiated! This is a frontend demo.')">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     SEARCH OVERLAY MODAL
+     ========================================== -->
+  <div class="search-overlay" id="search-overlay">
+    <button class="close-search-btn" id="search-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    <div class="search-container">
+      <h2 style="color: var(--text-light); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 500;">Search Our Tea Garden</h2>
+      <div class="search-input-wrapper">
+        <input type="text" class="search-input" id="search-input-field" placeholder="Search for chamomile, green tea, sachets..." autofocus>
+        <button class="search-submit-btn" onclick="alert('Search initiated: ' + document.getElementById('search-input-field').value)"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="search-suggestions">
+        <span>Popular: </span>
+        <a href="#shop" onclick="triggerSearchMock('Berry')">Alpine Berry</a>
+        <a href="#shop" onclick="triggerSearchMock('Green')">Tropical Green</a>
+        <a href="#shop" onclick="triggerSearchMock('Chai')">Mountain Chai</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     FOOTER SECTION
+     ========================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="Twoleaves_logo.svg" alt="Two Leaves and a Bud Logo">
+          </div>
+          <p class="footer-desc">Crafting premium, organic, whole leaf teas since 2004. Based in Basalt, Colorado, we strive to bring you the best tea leaves in the most sustainable way.</p>
+          <div class="social-links">
+            <a href="https://instagram.com" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://pinterest.com" class="social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-nav-title">Shop Teas</h4>
+          <div class="footer-nav-links">
+            <a href="#shop">All Blends</a>
+            <a href="#shop">Black Teas</a>
+            <a href="#shop">Green Teas</a>
+            <a href="#shop">Herbal Infusions</a>
+            <a href="#shop">Tea Sampler Variety Packs</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-nav-title">Company</h4>
+          <div class="footer-nav-links">
+            <a href="#story">Our Story</a>
+            <a href="#brewing">Brewing guides</a>
+            <a href="#wholesale">Wholesale application</a>
+            <a href="mailto:info@twoleavestea.com">Contact Us</a>
+            <a href="#">FAQ / Support</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-newsletter-title">Join the Tea Circle</h4>
+          <p class="footer-newsletter-desc">Subscribe to receive tea brewing guides, exclusive product releases, and 10% off your first purchase.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully! Check your email for the 10% coupon code.'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Two Leaves and a Bud Tea Company. All Rights Reserved. Basalt, CO.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Shipping & Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="app.js"></script>
+</body>
+</html>
